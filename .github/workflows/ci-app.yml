@@ -2,22 +2,22 @@ name: ci-app
 
 on:
   push:
-	branches:
-	  - main
+    branches:
+      - main
   pull_request:
-	branches:
-	  - main
+    branches:
+      - main
 
 jobs:
   build:
-	runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-	steps:
-	  -name: Setup project
-	  run: make setup
+    steps:
+      - name: Setup project
+        run: make setup
 
-	  -name: Run tests
-	  run: make test
+      - name: Run tests
+        run: make test
 
-	  -name: Run linter
-	  run: make lint
+      - name: Run linter
+        run: make lint
